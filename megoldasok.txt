@@ -1,0 +1,27 @@
+3.,
+SELECT szerzo, cim, ev, oldal 
+FROM konyv
+WHERE szerzo = 'Márai Sándor';
+
+4.,
+SELECT nev
+FROM kiado, konyv
+WHERE kiado.kod = konyv.kiadokod AND tema = 'zene'
+GROUP BY nev;
+
+5.,
+SELECT ev, cim
+FROM konyv
+WHERE szerzo LIKE 'Jókai Mór'
+ORDER BY ev DESC
+LIMIT 1;
+
+6.,
+SELECT tema, COUNT(*) AS konyv_szam 
+FROM konyv
+GROUP BY tema 
+ORDER BY konyv_szam DESC;
+
+7.,
+UPDATE kiado SET nev = 'Móra Ferenc Könyvkiadó'
+WHERE nev = 'Móra Kiadó';
